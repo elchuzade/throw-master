@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PrivacyPolicyWindow : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class PrivacyPolicyWindow : MonoBehaviour
 
     [SerializeField] GameObject mainCanvas;
     [SerializeField] GameObject privacyPolicyCanvas;
+    [SerializeField] GameObject leaderboardButton;
 
     void Start()
     {
@@ -28,6 +30,7 @@ public class PrivacyPolicyWindow : MonoBehaviour
         player.privacyPolicyAccepted = true;
         player.SavePlayer();
         ClickCloseButton();
+        leaderboardButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
     }
 
     public void ClickCloseButton()

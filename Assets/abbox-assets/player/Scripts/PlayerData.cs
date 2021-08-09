@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 [Serializable]
 public class PlayerData
@@ -10,6 +11,7 @@ public class PlayerData
     public bool privacyPolicyDeclined = false;
     public bool sounds = false;
     public bool haptics = false;
+    public List<long> leaderboardClicks = new List<long>();
 
     public PlayerData (Player player)
     {
@@ -20,5 +22,6 @@ public class PlayerData
         privacyPolicyDeclined = player.privacyPolicyDeclined;
         sounds = player.sounds;
         haptics = player.haptics;
+        leaderboardClicks = player.leaderboardClicks;
     }
 }

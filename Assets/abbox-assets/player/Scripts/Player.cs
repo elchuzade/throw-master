@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
     public bool privacyPolicyDeclined = false;
     public bool sounds = false;
     public bool haptics = false;
+    public List<long> leaderboardClicks = new List<long>();
 
     void Awake()
     {
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
         privacyPolicyDeclined = false;
         sounds = false;
         haptics = false;
+        leaderboardClicks = new List<long>();
 
         SaveSystem.SavePlayer(this);
     }
@@ -59,5 +62,6 @@ public class Player : MonoBehaviour
         privacyPolicyDeclined = data.privacyPolicyDeclined;
         sounds = data.sounds;
         haptics = data.haptics;
+        leaderboardClicks = data.leaderboardClicks;
     }
 }
