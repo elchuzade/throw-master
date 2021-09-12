@@ -12,6 +12,15 @@ public class Player : MonoBehaviour
     public bool haptics = false;
     public List<long> leaderboardClicks = new List<long>();
 
+    // 0 - locked, 1 passed, -1 skippped
+    public List<int> axeLevels = new List<int>() {
+        1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    };
+
     void Awake()
     {
         transform.SetParent(transform.parent.parent);
@@ -42,6 +51,13 @@ public class Player : MonoBehaviour
         sounds = false;
         haptics = false;
         leaderboardClicks = new List<long>();
+        axeLevels = new List<int>() {
+            1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        };
 
         SaveSystem.SavePlayer(this);
     }
@@ -63,5 +79,6 @@ public class Player : MonoBehaviour
         sounds = data.sounds;
         haptics = data.haptics;
         leaderboardClicks = data.leaderboardClicks;
+        axeLevels = data.axeLevels;
     }
 }

@@ -13,6 +13,15 @@ public class PlayerData
     public bool haptics = false;
     public List<long> leaderboardClicks = new List<long>();
 
+    // -1 skippped, 0 - locked, 1 unlocked, 2 passed
+    public List<int> axeLevels = new List<int>() {
+        1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    };
+
     public PlayerData (Player player)
     {
         score = player.score;
@@ -23,5 +32,6 @@ public class PlayerData
         sounds = player.sounds;
         haptics = player.haptics;
         leaderboardClicks = player.leaderboardClicks;
+        axeLevels = player.axeLevels;
     }
 }
